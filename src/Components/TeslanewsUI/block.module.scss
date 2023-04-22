@@ -1,0 +1,37 @@
+.block{
+  position: relative;
+  background-color: coral;
+  width: 800px;
+  height: fit-content;
+  margin: 30px ;
+  
+
+  .image{
+    background-color:chartreuse;
+    display: inline-block;
+    width: 100%;
+    height: fit-content;
+
+    
+    img{
+      width:100%;
+      height:fit-content;
+    }
+
+    .title{
+      position: absolute;
+      bottom: 0%;
+      color: white;
+      background: rgb(90,92,93);
+      background: linear-gradient(180deg, rgba(90,92,93,0.5604758884595789) 0%, rgba(44,43,48,1) 69%);
+      font-size: 40px;
+      width: 100%;
+      height: auto;
+      margin:0px;
+      padding: 35px 0;
+  
+    }
+   
+  }
+
+}
