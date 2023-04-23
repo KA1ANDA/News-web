@@ -17,7 +17,7 @@ export const ApiNews = createApi ({
   endpoints:(builder) => ({
 
     getEveryTeslaNews:builder.query({
-      query: () =>`everything?q=tesla`,
+      query: (number) =>`everything?q=tesla&pageSize=${number}`,
       providesTags: ['Tesla'],
     })
 

@@ -1,3 +1,29 @@
 .app{
-  background-color: aqua;
+  display: grid;
+  background-color:chocolate;
+  gap: 30px;
+  grid-template-areas: 
+  'navigation navigation navigation'
+  'status news sidebar'
+  ;
+  grid-template-columns: 1fr 2fr 1fr;
+  
+
+  .navigation{
+    grid-area: navigation;
+  }
+
+
+  .status{
+    grid-area: status;
+  }
+
+  .news{
+    grid-area: news;
+  }
+
+
+  .sidebar{
+    grid-area: sidebar;
+  }
 }

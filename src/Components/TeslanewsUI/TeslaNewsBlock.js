@@ -2,14 +2,18 @@ import React from 'react';
 import styles from './block.module.scss';
 
 
-const TeslaNewsBlock = ({image,title,description}) => {
+const TeslaNewsBlock = ({image,title,description,publishedAt}) => {
   return (
-    <div className={styles.block}>
-      <div className={styles.image}>
-       <img src={image} />
-       <h2 className={styles.title}>{title}</h2>
+      <div className={styles.block}>
+        <div>
+        <img src={image} />
+        </div>
+        <div className={styles.title}>
+          {title} 
+          <br />
+          <span>Published:{publishedAt}</span>
+        </div>
       </div>
-    </div>
   );
 }
 export default TeslaNewsBlock;

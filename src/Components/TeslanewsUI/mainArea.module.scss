@@ -1,5 +1,29 @@
 .main{
-  background-color: red;
-  width: fit-content;
-  margin: auto;
+  padding:35px 0px;
+  display: grid;
+  grid-template-columns: minmax(400px,450px) minmax(400px,450px);
+  justify-content: center;
+  gap:35px;
+  background-color: #0b121e;
+
+
+  .showMoreBtn{
+    grid-column: 1/3 ;
+    margin:auto;
+  }
+
+    button{
+      background-color: #2a323e;
+      color: #93a0b4;
+      border:none;
+      width: 200px;
+      height: 50px;
+      border-radius : 190px 190px 190px 190px;
+      transition: 0.3s;
+      cursor: pointer;
+
+        &:hover{
+          background-color: #b2462a;
+        }
+    }
 }

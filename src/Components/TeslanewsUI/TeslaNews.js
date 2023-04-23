@@ -6,8 +6,8 @@ import styles from './mainArea.module.scss'
 
 
 const TeslaNews = () => {
-
-  const {data=[],isLoading} = useGetEveryTeslaNewsQuery()
+  const number = 6;
+  const {data=[],isLoading} = useGetEveryTeslaNewsQuery(number)
 
 
   if (isLoading){
@@ -16,9 +16,13 @@ const TeslaNews = () => {
 
   return (
     <div className={styles.main}>
-     {data.articles.map((item) => <TeslaNewsBlock
+     {data.articles.map((item) => item.urlToImage && <TeslaNewsBlock
       image={item.urlToImage}
-      title={item.title}/>)}
+      title={item.title}
+      publishedAt={item.publishedAt}/>)}
+      <div className={styles.showMoreBtn}>
+        <button>Show More</button>
+      </div>
     </div>
   );
 }
