@@ -1,11 +1,11 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 
 const BASE_URL = 'https://newsapi.org/v2/';
-const API_KEY ="2c67406b9c8342c88437d6b1eede6681";
+const API_KEY ="8e4083f1fd904e92bb7466df4be1f8a1";
 
 export const ApiNews = createApi ({
   reducerPath:"ApiNews",
-  tagTypes:['Tesla'],
+  tagTypes:['Tesla','TopHeadlines'],
   baseQuery:fetchBaseQuery({
     baseUrl:BASE_URL,
     prepareHeaders: (headers) => {
@@ -15,13 +15,12 @@ export const ApiNews = createApi ({
   }),
   
   endpoints:(builder) => ({
-
     getEveryTeslaNews:builder.query({
       query: (number) =>`everything?q=tesla&pageSize=${number}`,
       providesTags: ['Tesla'],
     })
-
   })
+
 });
 
 

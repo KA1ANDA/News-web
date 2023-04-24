@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { ApiNews } from "./ApiNews";
+import newsContentSlice from "./newsContentSlice";
 
 
 
@@ -7,6 +8,7 @@ import { ApiNews } from "./ApiNews";
 
 export const store = configureStore({
   reducer:{
+    newsContentSlice,
     [ApiNews.reducerPath]:ApiNews.reducer,
   },
 

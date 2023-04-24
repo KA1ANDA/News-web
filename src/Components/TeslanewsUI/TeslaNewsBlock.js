@@ -1,10 +1,18 @@
 import React from 'react';
 import styles from './block.module.scss';
+import { useDispatch } from 'react-redux';
+import { addContent } from '../../Redux/newsContentSlice';
 
 
-const TeslaNewsBlock = ({image,title,description,publishedAt}) => {
+
+
+const TeslaNewsBlock = ({image,title,publishedAt,description}) => {
+
+  const dispatch = useDispatch()
+  const newsContent = () => dispatch(addContent(description))
+
   return (
-      <div className={styles.block}>
+      <div onClick={newsContent} className={styles.block}>
         <div>
         <img src={image} />
         </div>

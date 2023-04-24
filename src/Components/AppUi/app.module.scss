@@ -4,9 +4,9 @@
   gap: 30px;
   grid-template-areas: 
   'navigation navigation navigation'
-  'status news sidebar'
+  'content news sidebar'
   ;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 2fr 0.8fr;
   
 
   .navigation{
@@ -14,8 +14,9 @@
   }
 
 
-  .status{
-    grid-area: status;
+  .content{
+    grid-area: content;
+
   }
 
   .news{

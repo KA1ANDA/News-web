@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useGetEveryTeslaNewsQuery } from '../../Redux/ApiNews';
 import TeslaNewsBlock from './TeslaNewsBlock';
 import styles from './mainArea.module.scss'
@@ -6,22 +6,31 @@ import styles from './mainArea.module.scss'
 
 
 const TeslaNews = () => {
-  const number = 6;
-  const {data=[],isLoading} = useGetEveryTeslaNewsQuery(number)
 
+  const [newsQuantity,setNewsQuantity] = useState(6)
+
+  const {data=[],isLoading,error} = useGetEveryTeslaNewsQuery(newsQuantity)
+  
 
   if (isLoading){
     return <h1>LOADING...</h1>
   }
 
+
   return (
     <div className={styles.main}>
-     {data.articles.map((item) => item.urlToImage && <TeslaNewsBlock
+
+     {data.articles && data.articles.map((item) => item.urlToImage && <TeslaNewsBlock
       image={item.urlToImage}
       title={item.title}
+      description ={item.description}
       publishedAt={item.publishedAt}/>)}
+
+      <div className={styles.error}>
+        {error && <div>No More News Found</div>}
+      </div>
       <div className={styles.showMoreBtn}>
-        <button>Show More</button>
+        <button onClick={() =>setNewsQuantity(newsQuantity+30)}>Show More</button>
       </div>
     </div>
   );
