@@ -1,10 +1,9 @@
 .footer{
-  background-color: rgb(164, 109, 7);
+  background-color:#19202e;
   height: 500px;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   
   
 
@@ -12,11 +11,23 @@
 
   .footerNavigation{
     background-color: green;
-    width: 700px;
+    margin: 0px 300px;
+    display: flex;
+    justify-content: space-between;
 
+
+    .navigation{
+      background-color: red;
+      padding-right: 300px;
+
+      &>ul{
+        list-style: none;
+      }
+    }
   }
 
   .footerLinks{
     background-color: blue;
+    margin: 0px 300px;
   }
 }

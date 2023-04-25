@@ -5,7 +5,7 @@ import styles from './sidebarNews.module.scss';
 const SidebarNews = ({image,title,publishedAt}) => {
   return (
       <div className={styles.block}>
-        <div>
+        <div className={styles.imgdiv}>
         <img src={image} />
         </div>
         <div className={styles.title}>
