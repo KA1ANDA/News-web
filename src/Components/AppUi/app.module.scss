@@ -1,12 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
 .app{
   display: grid;
-  background-color:chocolate;
+  background-color:#0b121ef4;
   gap: 30px;
   grid-template-areas: 
   'navigation navigation navigation'
   'content news sidebar'
+  'footer footer footer'
   ;
   grid-template-columns: 1fr 2fr 0.8fr;
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
   
 
   .navigation{
@@ -26,5 +31,9 @@
 
   .sidebar{
     grid-area: sidebar;
+  }
+
+  .footer{
+    grid-area: footer;
   }
 }

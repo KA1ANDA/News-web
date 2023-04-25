@@ -4,6 +4,7 @@ import styles from './app.module.scss';
 import Navigation from '../NavUI/Navigation';
 import Sidebar from '../SidebarUi/Sidebar';
 import Status from '../NewsContentUI/NewsContent';
+import Footer from '../FooterUi/Footer';
 
 
 
@@ -23,6 +24,9 @@ const App = () => {
       </div>
       <div className={styles.news}>
         <TeslaNews />
+      </div>
+      <div className={styles.footer}>
+        <Footer />
       </div>
     </div>
   );
