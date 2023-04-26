@@ -5,6 +5,7 @@ import Navigation from '../NavUI/Navigation';
 import Sidebar from '../SidebarUi/Sidebar';
 import Status from '../NewsContentUI/NewsContent';
 import Footer from '../FooterUi/Footer';
+import Header from '../HeaderUi/Header';
 
 
 
@@ -13,6 +14,9 @@ import Footer from '../FooterUi/Footer';
 const App = () => {
   return (
     <div className={styles.app}>
+      <div className={styles.header}>
+        <Header />
+      </div>
       <div className={styles.navigation}>
         <Navigation />
       </div>

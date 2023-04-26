@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
+
+body{
+  margin: 0;
+}
+
 .app{
   display: grid;
-  background-color:#0b121ef4;
-  gap: 30px;
+  background-color:#0b121e;
+  // gap: 30px;
   grid-template-areas: 
+  'header header header'
   'navigation navigation navigation'
   'content news sidebar'
   'footer footer footer'
@@ -14,8 +20,15 @@
   font-weight: 700;
   
 
+  .header{
+    grid-area: header;
+    border-bottom: 1px solid #1e2634;
+  }
+
+
   .navigation{
     grid-area: navigation;
+    border-bottom: 1px solid #1e2634;
   }
 
 
@@ -26,6 +39,7 @@
 
   .news{
     grid-area: news;
+    border-left: 1px solid #1e2634;
   }
 
 

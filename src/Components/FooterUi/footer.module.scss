@@ -10,24 +10,149 @@
 
 
   .footerNavigation{
-    background-color: green;
     margin: 0px 300px;
     display: flex;
     justify-content: space-between;
+    color: white;
+    border-bottom: 1px solid #3c475a;
+    padding-bottom: 20px;
+
+
+    .logo{
+      background-image: url(./../../../public/imgs/logo3.png);
+      background-size: cover;
+      background-position: center;
+      height: 70px;
+      width: 50px;
+      margin-bottom: 20px;
+    }
+
+    p{
+      font-size: 13px;
+    }
+
 
 
     .navigation{
-      background-color: red;
       padding-right: 300px;
+      color: #93a0b4;
 
       &>ul{
         list-style: none;
+        font-size: 15px;
+
+
+        li{
+          border-radius: 4%;
+          padding: 10px;
+          margin-bottom: 10px;
+          cursor: pointer;
+
+          &:hover{
+            background-color: #232a38;
+          }
+        }
+
       }
     }
   }
 
   .footerLinks{
-    background-color: blue;
     margin: 0px 300px;
+
+    p{
+      color:white;
+    }
+
+    span{
+      color:#93a0b4;
+    }
+
+
+    .listenNetworks{
+      margin-top:15px;
+      display: flex;
+      
+
+
+      .apple{
+        display: flex;
+        align-items: center;
+        background-color: #0b121e;
+        padding: 8px;
+        border-radius: 2%;
+        margin-right: 10px;
+        cursor: pointer;
+        
+
+        &>div{
+          background-image: url(./../../../public/imgs/apple.png);
+          background-size: cover;
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+        }  
+      }
+
+      .spotify{
+        display: flex;
+        align-items: center;
+        background-color: #0b121e;
+        padding: 8px;
+        border-radius: 2%;
+        margin-right: 10px;
+        cursor: pointer;
+        
+
+        &>div{
+          background-image: url(./../../../public/imgs/spotify.png);
+          background-size: cover;
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+        }  
+      }
+
+
+
+      .amazon{
+        display: flex;
+        align-items: center;
+        background-color: #0b121e;
+        padding: 8px;
+        border-radius: 2%;
+        margin-right: 10px;
+        cursor: pointer;
+        
+
+        &>div{
+          background-image: url(./../../../public/imgs/amazon.png);
+          background-size: cover;
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+        }  
+      }
+
+      .youtube{
+        display: flex;
+        align-items: center;
+        background-color: #0b121e;
+        padding: 8px;
+        border-radius: 2%;
+        margin-right: 10px;
+        cursor: pointer;
+        
+
+        &>div{
+          background-image: url(./../../../public/imgs/youtube.png);
+          background-size: cover;
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+        }  
+      }
+      
+    }
   }
 }

@@ -1,0 +1,44 @@
+.header{
+  background-color: #0b121e;
+  display: flex;
+  justify-content: space-between;
+
+  .logo{
+    background-image: url(./../../../public/imgs/logo3.png);
+    background-size: cover;
+    background-position: center;
+    height: 70px;
+    width: 50px;
+    margin: 10px 0px 10px 50px;
+    cursor: pointer;
+  }
+
+
+
+  .loginSearch{
+    display: flex;
+    align-items: center;
+
+
+
+    .avatar{
+      background-image: url(./../../../public/imgs/avatar.png);
+      background-size: cover;
+      background-position: center;
+      height: 30px;
+      width: 30px;
+      cursor: pointer;
+    }
+
+
+    .search{
+      background-image: url(./../../../public/imgs/search.png);
+      background-size: cover;
+      background-position: center;
+      height: 30px;
+      width: 30px;
+      margin:15px;
+      cursor: pointer;
+    }
+  }
+}

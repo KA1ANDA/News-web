@@ -5,11 +5,9 @@
   justify-content: center;
   height: 50px;
   background-color: #0b121e;
-  cursor: pointer;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  position: sticky;
-  top:0px;
+
   
   .active{
     color:white;
@@ -24,6 +22,7 @@
     padding: 0px 40px;
     white-space: nowrap;
     color:#93a0b4;
+    cursor: pointer;
     transition: 0.3s;
 
     &:hover{
