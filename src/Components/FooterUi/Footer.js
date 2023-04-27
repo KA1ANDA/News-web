@@ -1,5 +1,9 @@
 import React from 'react';
 import styles from './footer.module.scss'
+import {BsFillShareFill} from 'react-icons/bs'
+import {BsTwitter} from 'react-icons/bs'
+import {BsLinkedin} from 'react-icons/bs'
+import {BsFacebook} from 'react-icons/bs'
 
 const Footer = () => {
   return (
@@ -9,7 +13,10 @@ const Footer = () => {
           <div className={styles.logo}></div>
           <p>A non-profit news aggregator helping you</p>
           <p>break out of your filter bubble</p>
-          <div>SHARE <span>#</span>  FOLLOW US <span>###</span></div>
+          <div className={styles.follow}>SHARE <div className={styles.share}><BsFillShareFill /></div>  FOLLOW US 
+          <div className={styles.twiter}><BsTwitter /></div>
+          <div className={styles.linkedin}><BsLinkedin /></div>
+          <div className={styles.facebook}><BsFacebook /></div></div>
         </div>
         <div className={styles.navigation}>
           <ul>

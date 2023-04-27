@@ -17,6 +17,46 @@
     border-bottom: 1px solid #3c475a;
     padding-bottom: 20px;
 
+    .follow{
+      display: flex;
+      align-items: center;
+
+
+      .share{
+        background-color: #ff683c;
+        width: fit-content;
+        padding: 5px;
+        border-radius: 50%;
+        margin: 0 15px;
+        cursor: pointer;
+      }
+
+      .twiter{
+        color:#1da1f2;
+        font-size: 25px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+
+      .linkedin{
+        color:#2867b2;
+        margin: 10px;
+        font-size: 25px;
+        cursor: pointer;
+      }
+
+      .facebook{
+        color:#4267b2;
+        font-size: 25px;
+        cursor: pointer;
+      }
+    }
+
+    &>div{
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+    }
+
 
     .logo{
       background-image: url(./../../../public/imgs/logo3.png);
@@ -36,6 +76,8 @@
     .navigation{
       padding-right: 300px;
       color: #93a0b4;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
 
       &>ul{
         list-style: none;
@@ -59,6 +101,8 @@
 
   .footerLinks{
     margin: 0px 300px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
 
     p{
       color:white;

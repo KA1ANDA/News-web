@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import { useGetEveryTeslaNewsQuery } from '../../Redux/ApiNews';
 import TeslaNewsBlock from './TeslaNewsBlock';
 import styles from './mainArea.module.scss'
+import { useSelector } from 'react-redux';
 
 
 
 const TeslaNews = () => {
-
+  const {language} = useSelector (state => state.headerSlice)
   const [newsQuantity,setNewsQuantity] = useState(6)
-
-  const {data=[],isLoading,error} = useGetEveryTeslaNewsQuery(newsQuantity)
-  
+  const {data=[],isLoading,error} = useGetEveryTeslaNewsQuery({number:newsQuantity , lang:language})
 
   if (isLoading){
     return <h1>LOADING...</h1>

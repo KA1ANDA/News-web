@@ -1,7 +1,7 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 
 const BASE_URL = 'https://newsapi.org/v2/';
-const API_KEY ="8e4083f1fd904e92bb7466df4be1f8a1";
+const API_KEY ="2c67406b9c8342c88437d6b1eede6681";
 
 export const ApiNews = createApi ({
   reducerPath:"ApiNews",
@@ -15,13 +15,31 @@ export const ApiNews = createApi ({
   }),
   
   endpoints:(builder) => ({
-    getEveryTeslaNews:builder.query({
-      query: (number) =>`everything?q=tesla&pageSize=${number}`,
+
+    getData:builder.query({
+      query: (lang) => `everything?q=tesla&language=${lang}`,
       providesTags: ['Tesla'],
+    }),
+
+
+    getEveryTeslaNews:builder.query({
+      query: (args) =>{
+        const {number,lang} = args;
+        return{
+          url:`everything?q=tesla&pageSize=${number}&language=${lang}`,
+        }
+      },
+      providesTags: ['Tesla'],
+    }),
+
+
+    getTopHeadlines:builder.query({
+      query: () => `top-headlines?country=us`,
+      providesTags: ['TopHeadlines'],
     })
   })
 
 });
 
 
-export const{useGetEveryTeslaNewsQuery} = ApiNews;
+export const{useGetEveryTeslaNewsQuery,useGetTopHeadlinesQuery,useGetDataQuery} = ApiNews;

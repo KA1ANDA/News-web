@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './sidebar.module.scss'
-import { useGetEveryTeslaNewsQuery } from '../../Redux/ApiNews';
+import { useGetEveryTeslaNewsQuery, useGetTopHeadlinesQuery } from '../../Redux/ApiNews';
 import SidebarNews from './SidebarNews';
+import { useSelector } from 'react-redux';
 
 const Sidebar = () => {
-  const {data=[],isLoading,error} = useGetEveryTeslaNewsQuery()
+  const {data=[],isLoading,error} = useGetTopHeadlinesQuery()
 
   return (
     <div className={styles.sidebar}>
