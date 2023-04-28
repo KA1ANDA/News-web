@@ -1,9 +1,11 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import styles from './navigation.module.scss'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { changeCategory } from '../../Redux/categorySlice';
 
 const Navigation = () => {
+
+  const {category} = useSelector (state => state.categorySlice)
 
   const dispatch = useDispatch();
   const change = (category) => dispatch(changeCategory(category))
@@ -16,8 +18,8 @@ const Navigation = () => {
 
   return (
     <div className={styles.navigation}>
-      <div onClick={() =>handleClick('HEADLINES')} >
-        HEADLINES
+      <div onClick={() =>handleClick('general')} className={category === 'general' && styles.active} >
+        GENERAL
       </div>
       <div onClick={() => handleClick('WORLD')}>
         WORLD
@@ -25,19 +27,19 @@ const Navigation = () => {
       <div onClick={() => handleClick('POLITICS')}>
         POLITICS
       </div>
-      <div onClick={() => handleClick('health')}>
+      <div onClick={() => handleClick('health')} className={category === 'health' && styles.active}>
         HEALTH
       </div>
-      <div onClick={() => handleClick('CRIME & JUSTICE')}>
-        CRIME & JUSTICE 
+      <div onClick={() => handleClick('technology')} className={category === 'technology' && styles.active}>
+        TECHNOLOGY
       </div>
-      <div onClick={() => handleClick('science')}>
-        SCIENCE & TECHNOLOGY
+      <div onClick={() => handleClick('science')} className={category === 'science' && styles.active}>
+        SCIENCE
       </div>
-      <div onClick={() => handleClick('sports')}> 
+      <div onClick={() => handleClick('sports')} className={category === 'sports' && styles.active}> 
         SPORTS
       </div>
-      <div onClick={() => handleClick('MONEY')}>
+      <div onClick={() => handleClick('crypto')}>
         MONEY
       </div>
       <div onClick={() => handleClick('CULTURE')}>
@@ -46,10 +48,10 @@ const Navigation = () => {
       <div onClick={() => handleClick('WEATHER')}>
         WEATHER
       </div>
-      <div onClick={() => handleClick('entertainment')}>
+      <div onClick={() => handleClick('entertainment')} className={category === 'entertainment' && styles.active}>
         ENTERTAITMENT
       </div>
-      <div onClick={() => handleClick('business')}>
+      <div onClick={() => handleClick('business')} className={category === 'business' && styles.active}>
         BUSINESS
       </div>
     </div>
