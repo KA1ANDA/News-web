@@ -1,11 +1,11 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 
 const BASE_URL = 'https://newsapi.org/v2/';
-const API_KEY ="2c67406b9c8342c88437d6b1eede6681";
+const API_KEY ="8e4083f1fd904e92bb7466df4be1f8a1";
 
 export const ApiNews = createApi ({
   reducerPath:"ApiNews",
-  tagTypes:['Tesla','TopHeadlines'],
+  tagTypes:['news','TopHeadlines'],
   baseQuery:fetchBaseQuery({
     baseUrl:BASE_URL,
     prepareHeaders: (headers) => {
@@ -16,25 +16,29 @@ export const ApiNews = createApi ({
   
   endpoints:(builder) => ({
 
+    //for content
     getData:builder.query({
       query: (lang) => `everything?q=tesla&language=${lang}`,
       providesTags: ['Tesla'],
     }),
 
 
-    getEveryTeslaNews:builder.query({
+
+    getNews:builder.query({
       query: (args) =>{
-        const {number,lang} = args;
+        const {number,lang,newsCategory} = args;
         return{
-          url:`everything?q=tesla&pageSize=${number}&language=${lang}`,
+          url:`top-headlines?category=${newsCategory}&pageSize=${number}&sortBy=publishedAt&language=${lang}`,
         }
       },
-      providesTags: ['Tesla'],
+      providesTags: ['news'],
     }),
 
 
+
+    //for sidebar news defaul top headlines
     getTopHeadlines:builder.query({
-      query: () => `top-headlines?country=us`,
+      query: () => `top-headlines?country=us&sortBy=publishedAt`,
       providesTags: ['TopHeadlines'],
     })
   })
@@ -42,4 +46,4 @@ export const ApiNews = createApi ({
 });
 
 
-export const{useGetEveryTeslaNewsQuery,useGetTopHeadlinesQuery,useGetDataQuery} = ApiNews;
+export const{useGetNewsQuery,useGetTopHeadlinesQuery,useGetDataQuery} = ApiNews;

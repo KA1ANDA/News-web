@@ -1,5 +1,5 @@
 import React from 'react';
-import TeslaNews from './../TeslanewsUI/TeslaNews';
+import News from './../TeslanewsUI/News';
 import styles from './app.module.scss';
 import Navigation from '../NavUI/Navigation';
 import Sidebar from '../SidebarUi/Sidebar';
@@ -27,7 +27,7 @@ const App = () => {
         <Status />
       </div>
       <div className={styles.news}>
-        <TeslaNews />
+        <News />
       </div>
       <div className={styles.footer}>
         <Footer />

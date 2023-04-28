@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './sidebarNews.module.scss';
+import {FiTrendingUp} from 'react-icons/fi'
 
 
 const SidebarNews = ({image,title,publishedAt}) => {
@@ -11,7 +12,7 @@ const SidebarNews = ({image,title,publishedAt}) => {
         <div className={styles.title}>
           {title} 
           <br />
-          <span>Published:{publishedAt}</span>
+          <span><span>Published:</span>{publishedAt} <span><FiTrendingUp /></span> </span>
         </div>
       </div>
   );

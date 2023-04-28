@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './block.module.scss';
 import { useDispatch } from 'react-redux';
 import { addContent } from '../../Redux/newsContentSlice';
-
+import {FiTrendingUp} from 'react-icons/fi'
 
 
 
@@ -19,7 +19,7 @@ const TeslaNewsBlock = ({image,title,publishedAt,description}) => {
         <div className={styles.title}>
           {title} 
           <br />
-          <span>Published:{publishedAt}</span>
+          <span><span>Published:</span>{publishedAt} <span><FiTrendingUp /></span></span>
         </div>
       </div>
   );
