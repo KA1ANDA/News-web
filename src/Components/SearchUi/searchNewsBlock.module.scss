@@ -1,0 +1,43 @@
+.block{
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  transition: 0.4s;
+  width: 400px;
+  height: 330px;
+ 
+  &:hover{
+    filter:contrast(80%);
+  }
+
+  img{
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .title{
+    padding: 5%;
+    position: absolute;
+    bottom:0% ;
+    background: rgb(29,36,47);
+    background: linear-gradient(180deg, rgba(29,36,47,0.7141357763808649) 0%, rgba(29,36,47,1) 87%);
+    color: white;
+    font-size: 20px;
+    height: fit-content;
+    width: 90%;
+
+
+    span{
+      color: #93a0b4;
+      font-size: 15px;
+      &>span{
+        color:#ff683c;
+        margin-right: 10px;
+      }
+    }
+
+    
+  }
+}
+
+

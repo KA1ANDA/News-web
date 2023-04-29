@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './newsContent.module.scss'
 import { useSelector } from 'react-redux';
-import { useGetDataQuery, useGetEveryTeslaNewsQuery } from '../../Redux/ApiNews';
+import { useGetDataQuery } from '../../Redux/ApiNews';
 
 const Status = () => {
-  const {language} = useSelector(state => state.headerSlice)
+  const {category} = useSelector(state => state.categorySlice)
   const {content} = useSelector(state => state.newsContentSlice)
-  const {data=[]} = useGetDataQuery(language)
+  const {data=[]} = useGetDataQuery()
 
   return (
     <div className={styles.content}>

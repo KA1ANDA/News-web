@@ -8,6 +8,7 @@ import categorySlice from "./categorySlice"
 
 
 
+
 export const store = configureStore({
   reducer:{
     newsContentSlice,
