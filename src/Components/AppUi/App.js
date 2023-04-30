@@ -1,5 +1,5 @@
 import React from 'react';
-import News from './../TeslanewsUI/News';
+import News from './../NewsUI/News';
 import styles from './app.module.scss';
 import Navigation from '../NavUI/Navigation';
 import Sidebar from '../SidebarUi/Sidebar';

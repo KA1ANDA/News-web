@@ -6,7 +6,7 @@ import {FiTrendingUp} from 'react-icons/fi'
 
 
 
-const TeslaNewsBlock = ({image,title,publishedAt,description}) => {
+const TeslaNewsBlock = ({image,title,publishedAt,description,url}) => {
 
   const dispatch = useDispatch()
   const newsContent = () => dispatch(addContent(description))
@@ -16,11 +16,13 @@ const TeslaNewsBlock = ({image,title,publishedAt,description}) => {
         <div>
         <img src={image} />
         </div>
-        <div className={styles.title}>
-          {title} 
-          <br />
-          <span><span>Published:</span>{publishedAt} <span><FiTrendingUp /></span></span>
-        </div>
+        <a href={url}>
+          <div className={styles.title}>
+            {title} 
+            <br />
+            <span><span>Published:</span>{publishedAt} <span><FiTrendingUp /></span></span>
+          </div>
+        </a>
       </div>
   );
 }

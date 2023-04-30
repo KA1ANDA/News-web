@@ -1,21 +1,28 @@
 import React, { useState } from 'react';
-import {  useGetNewsQuery } from '../../Redux/ApiNews';
+import {  useGetNewsQuery, useGetTopHeadlinesQuery } from '../../Redux/ApiNews';
 import TeslaNewsBlock from './NewsBlock';
 import styles from './mainArea.module.scss'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { changePageSize } from '../../Redux/newsSlice';
+import Loader from '../General/Loader';
 
 
 
 const TeslaNews = () => {
   const {category} = useSelector (state => state.categorySlice)
   const {language} = useSelector (state => state.headerSlice)
-  const [newsQuantity,setNewsQuantity] = useState(6)
+  const {pageSizeMain} = useSelector (state => state.newsSlice)
 
-  const {data=[],isLoading,error} = useGetNewsQuery({number:newsQuantity , lang:language , newsCategory:category})
+
+  const dispatch = useDispatch()
+  const changeNewsAmount = () => dispatch(changePageSize())
+
+  const {data=[],isLoading,error} = useGetNewsQuery({number:pageSizeMain , lang:language , newsCategory:category})
+ 
 
  
   if (isLoading){
-    return <h1>LOADING...</h1>
+    return <Loader />
   }
 
 
@@ -26,13 +33,14 @@ const TeslaNews = () => {
       image={item.urlToImage}
       title={item.title}
       description ={item.description}
-      publishedAt={item.publishedAt}/>)}
+      publishedAt={item.publishedAt}
+      url={item.url}/>)}
 
       <div className={styles.error}>
         {error && <div>No More News Found</div>}
       </div>
       <div className={styles.showMoreBtn}>
-        <button onClick={() =>setNewsQuantity(newsQuantity+30)}>Show More</button>
+        <button onClick={changeNewsAmount}>Show More</button>
       </div>
     </div>
   );

@@ -4,14 +4,15 @@ import { useGetNewsFromSearchQuery } from '../../Redux/ApiNews';
 import SearchNewsBlock from './SearchNewsBlock';
 import {AiOutlineSearch} from 'react-icons/ai';
 import {CgClose} from 'react-icons/cg'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toggleSearch } from '../../Redux/headerSlice';
 
 
 const Search = () => {
   const [searchValue,setSearchValue] = useState('')
   const [newsQuantity,setNewsQuantity] = useState(6)
-  const {data=[],isLoading,error} = useGetNewsFromSearchQuery({ value:searchValue,number:newsQuantity })
+  const {language} = useSelector (state => state.headerSlice)
+  const {data=[],isLoading,error} = useGetNewsFromSearchQuery({ value:searchValue,number:newsQuantity,lang:language })
 
   const dispatch = useDispatch()
   const toggle = () => dispatch(toggleSearch())
@@ -38,7 +39,8 @@ const Search = () => {
         image={item.urlToImage}
         title={item.title}
         description ={item.description}
-        publishedAt={item.publishedAt}/>)}
+        publishedAt={item.publishedAt}
+        url={item.url}/>)}
       </div>
       <div className={styles.showMoreBtn}>
         <button onClick={() =>setNewsQuantity(newsQuantity+30)}>Show More</button>

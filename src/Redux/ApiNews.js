@@ -1,7 +1,7 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 
 const BASE_URL = 'https://newsapi.org/v2/';
-const API_KEY ="36f2177e737f495e921ca0ed4517673e";
+const API_KEY ="8e4083f1fd904e92bb7466df4be1f8a1";
 
 export const ApiNews = createApi ({
   reducerPath:"ApiNews",
@@ -40,9 +40,9 @@ export const ApiNews = createApi ({
 
     getNewsFromSearch:builder.query({
       query: (args) => {
-        const {value,number} = args;
+        const {value,number,lang} = args;
         return{
-          url:`everything?q=${value}&pageSize=${number}`,
+          url:`everything?q=${value}&pageSize=${number}&language=${lang}`,
         }
       },
       providesTags: ['search'],
@@ -51,7 +51,7 @@ export const ApiNews = createApi ({
 
     //for sidebar news defaul top headlines
     getTopHeadlines:builder.query({
-      query: () => `top-headlines?country=us&sortBy=publishedAt`,
+      query: (pageSize) => `top-headlines?country=us&sortBy=publishedAt&pageSize=${pageSize}`,
       providesTags: ['TopHeadlines'],
     })
   })
