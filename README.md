@@ -1,3 +1,28 @@
+# App screenshot
+---
+## Main Page
+![mainPage](./public/imgs/mainScreenshot.png)
+## Search Page
+![searchPage](./public/imgs/searchScreenshot.png)
+
+# News Website
+
+This is a news website where users can browse articles by category and use a search function to find specific articles. The website is built using HTML, SCSS, React, Redux, RTK Query, and a news API.
+
+## Features
+
+- Browse articles by category: The website has several categories (e.g. politics, technology, sports) that users can choose from to browse articles related to that topic.
+
+- Search function: Users can search for articles using keywords or phrases.
+
+## Technologies Used
+- HTML/CSS: Used for website layout and styling.
+- SCSS: Used for more advanced styling features, such as variables, mixins, and nested rules.
+- React: Used for building the user interface and handling user interactions.
+- Redux: Used for managing the application state and data flow.
+- RTK Query: Used for fetching data from the news API and handling caching, retries, and other network-related features.
+- News API: Used as the data source for the articles.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
