@@ -3,6 +3,8 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 const BASE_URL = 'https://newsapi.org/v2/';
 const API_KEY ="8e4083f1fd904e92bb7466df4be1f8a1";
 
+
+
 export const ApiNews = createApi ({
   reducerPath:"ApiNews",
   tagTypes:['news','TopHeadlines','search'],
