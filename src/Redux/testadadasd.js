@@ -1,1 +1,0 @@
-const kuku = 5;
